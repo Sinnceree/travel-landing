@@ -19,19 +19,17 @@ const Navigation: React.FC = () => {
       'bg-white shadow-lg': navFocus 
     });
     
-    const darkText = classNames({
+		const menuClass = classNames("flex gap-10 font-normal z-20", {
 			"text-[#000000]": navFocus,
-			"text-[#FFFFFF]": !navFocus,
+			"text-[#ffffffb3]": !navFocus,
 		});
-
-		const menuClass = classNames(
-			"flex gap-10 text-[#ffffffb3] font-normal z-20",
-			darkText
-		);
 
 		const logoClass = classNames(
 			"flex gap-10 font-bold text-3xl font-['Inter']",
-			darkText
+			{
+				"text-[#000000]": navFocus,
+				"text-[#FFFFFF]": !navFocus,
+			}
 		);
 
 		const menuItemClass = classNames([
