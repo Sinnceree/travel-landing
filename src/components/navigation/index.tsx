@@ -19,29 +19,43 @@ const Navigation: React.FC = () => {
       'bg-white shadow-lg': navFocus 
     });
     
-    const menuClass = classNames('flex gap-10 text-[#ffffffb3] font-normal z-20 transition ease-in-out duration-300', {
-      'text-[#000]': navFocus
-    });
+    const menuClass = classNames(
+			"flex gap-10 text-[#ffffffb3] font-normal z-20",
+			{
+				"text-[#000000]": navFocus,
+			}
+		);
 
-    const logoClass = classNames('flex gap-10 text-[#FFFFFF] font-bold text-3xl transition ease-in-out duration-300', {
-      'text-[#000]': navFocus
-    })
+		const logoClass = classNames(
+			"flex gap-10 text-[#FFFFFF] font-bold text-3xl font-['Inter']",
+			{
+				"text-[#000000]": navFocus,
+			}
+		);
 
-  return (
-    <div className={parentStyles}>
-      <h1 className={logoClass}>trxvl.</h1>
+		const menuItemClass = classNames([
+			"hover:before:absolute hover:before:w-full hover:before:h-[2px] hover:before:bg-white hover:before:bottom-[-10px]",
+			"relative cursor-pointer hover:text-whit font-['Inter']",
+		]);
 
-      <ul className={menuClass}>
-        <li>Home</li>
-        <li>Stays</li>
-        <li>Flights</li>
-        <li>Packages</li>
-        
-        <button className='font-bold'>Sign Up</button>
-      </ul>
-      
-    </div>
-  )
+		return (
+			<div className={parentStyles}>
+				<div className="container mx-auto flex items-center justify-between">
+					<h1 className={logoClass}>trxvl.</h1>
+
+					<ul className={menuClass}>
+						<li className={menuItemClass}>Home</li>
+						<li className={menuItemClass}>Stays</li>
+						<li className={menuItemClass}>Flights</li>
+						<li className={menuItemClass}>Packages</li>
+
+						<button className="font-bold font-['Inter'] hover:text-white">
+							Sign Up
+						</button>
+					</ul>
+				</div>
+			</div>
+		);
 }
 
 export default Navigation;
