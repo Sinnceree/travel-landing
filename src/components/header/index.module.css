@@ -1,0 +1,15 @@
+.header {
+  background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  
+  @apply m-0 p-0 min-h-screen bg-cover bg-no-repeat relative flex items-center;
+
+  &::before {
+    @apply absolute h-full w-full bg-[#00000036] content-[""] ;
+    /* @apply absolute h-full w-full bg-[#00000036] content-[""] ; */
+    /* @apply absolute w-full h-48 bg-gradient-to-b from-[#000000cc] to-[#00000000] content-[""] */
+  }
+
+  &::after {
+    @apply content-[""] absolute h-60 w-full bg-gradient-to-t from-white via-transparent bottom-0;
+  }
+}
